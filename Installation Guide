@@ -1,0 +1,16 @@
+1. This will initialize with default package.json file
+   npm init --yes
+
+npm install redux
+
+2. to execute the index.js
+   node index
+
+npx create-react-app react-toolkit --template typescript
+
+npm i react-redux @reduxjs/toolkit
+
+npm i bootstrap@5.2.3 react-redux @reduxjs/toolkit
+npm i react-hook-form@7.43 zod@3.20.6 @hookform/resolvers@2.9.11
+
+npm i react-redux @reduxjs/toolkit bootstrap@5.2.3 react-redux @reduxjs/toolkit react-hook-form@7.43 zod@3.20.6 @hookform/resolvers@2.9.11
