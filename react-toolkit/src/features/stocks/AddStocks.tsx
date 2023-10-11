@@ -77,7 +77,7 @@ const AddStocks: React.FC = () => {
           Country :
         </label>
         <input id="country" type="text" {...register("country")} className="form-control" />
-        {errors.description && <p className="text-danger">{errors.description.message}</p>}
+        {errors.country && <p className="text-danger">{errors.country.message}</p>}
       </div>
       <button type="submit" disabled={(errors.name || errors.symbol || errors.description || errors.country) && !isValid} className="btn btn-primary">
         Submit
