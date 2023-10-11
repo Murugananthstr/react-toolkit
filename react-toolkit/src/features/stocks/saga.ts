@@ -2,7 +2,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { call, put } from "redux-saga/effects";
 import { ISearchExistingRequest } from "../types";
 import { createNewRequestForAddStockForm, getAPIDataForAddStockForm } from "../../services/api";
-import { CREATE_REQUEST_FOR_ADDSTOCKFORM_ASYNC_SUCCESS, LOAD_ADDSTOCKFORM_EXISTING_REQUEST_ASYNC_SUCCESS } from "./slice";
+import { LOAD_ADDSTOCKFORM_EXISTING_REQUEST_ASYNC_SUCCESS } from "./slice";
 import { IAddStocksForm, IExistingRequestForAddStocksForm } from "./types";
 import { IAddStockFormApiData } from "../../services/types";
 import { useAppSelector } from "../../hooks";
