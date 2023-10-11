@@ -14,3 +14,34 @@ npm i bootstrap@5.2.3 react-redux @reduxjs/toolkit
 npm i react-hook-form@7.43 zod@3.20.6 @hookform/resolvers@2.9.11
 
 npm i react-redux @reduxjs/toolkit bootstrap@5.2.3 react-redux @reduxjs/toolkit react-hook-form@7.43 zod@3.20.6 @hookform/resolvers@2.9.11
+
+npm i @types/react-redux
+npm install redux redux-saga
+
+.prettierrc.json file content
+{
+"trailingComma": "es5",
+"tabWidth": 2,
+"semi": true,
+"singleQuote": true
+}
+
+npm install --save-dev prettier
+or settings from Format
+{
+"editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"prettier.printWidth": 80,
+"prettier.tabWidth": 2,
+"prettier.useTabs": false,
+"prettier.semi": true,
+"prettier.singleQuote": true,
+"prettier.trailingComma": "all",
+"prettier.arrowParens": "always"
+}
+
+Configure Prettier Scripts in package.json
+Update your package.json file to include scripts for formatting files using Prettier. Add the following lines to the scripts section:
+"scripts": {
+"format": "prettier --write \"src/\*_/_.{js,jsx,ts,tsx}\""
+}
