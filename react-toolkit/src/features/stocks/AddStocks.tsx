@@ -3,7 +3,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { IAddStockApp, SET_DATA } from "./slice/newRequestsSlice";
-import { IStocks } from "./types";
+import { IAddStocksForm } from "./types";
 
 const schema = z.object({
   name: z
@@ -44,7 +44,7 @@ const AddStocks: React.FC = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const onSubmit = (data: FieldValues) => {
-    const payloadData: IStocks = {
+    const payloadData: IAddStocksForm = {
       id: new Date().getTime().toString(),
       name: data.name,
       symbol: data.symbol,

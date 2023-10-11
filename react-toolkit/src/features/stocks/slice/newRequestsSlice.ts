@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IStocks } from "../types";
+import { IAddStocksForm } from "../types";
 
 export interface IAddStockApp {
-  data: IStocks;
+  data: IAddStocksForm;
 }
 
 const initialState: IAddStockApp = {
@@ -20,9 +20,8 @@ export const addStockSlice = createSlice({
   initialState,
   reducers: {
     SET_INITIAL_STATE: () => initialState,
-    SET_DATA: (state, action: PayloadAction<IStocks>) => {
+    SET_DATA: (state, action: PayloadAction<IAddStocksForm>) => {
       state.data = action.payload;
-      console.log("from Slice:", state.data);
     },
   },
 });
