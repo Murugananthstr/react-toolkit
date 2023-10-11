@@ -11,7 +11,7 @@ const ListStocks: React.FC = () => {
 
   useEffect(() => {
     dispatch(LOAD_ADDSTOCKFORM_EXISTING_REQUEST_ASYNC({ requestType: RequestType.AddStocksForm } as ISearchExistingRequest));
-  }, []);
+  }, [data]);
 
   return (
     <div>
@@ -28,9 +28,10 @@ const ListStocks: React.FC = () => {
           <tbody>
             {data.map(x => (
               <tr key={x.id}>
-                <td>{x.id}</td> <td>{x.name}</td>
-                <td>{x.symbol}</td>
-                <td>{x.country}</td>
+                <td> {x.id} </td>
+                <td> {x.name} </td>
+                <td> {x.symbol} </td>
+                <td> {x.country} </td>
               </tr>
             ))}
           </tbody>

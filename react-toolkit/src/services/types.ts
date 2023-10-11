@@ -1,4 +1,4 @@
-interface AddStockAPIData {
+interface IAddStockAPIData {
   id: number;
   attributes: {
     name: string;
@@ -11,6 +11,6 @@ interface AddStockAPIData {
   };
 }
 
-export interface AddStockFormApiData {
-  data: AddStockAPIData[];
+export interface IAddStockFormApiData {
+  data: IAddStockAPIData[];
 }

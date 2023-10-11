@@ -1,9 +1,13 @@
-export interface IAddStocksForm {
-  id: string;
+export interface IStock {
   name: string;
   symbol: string;
   description: string;
   country: string;
+}
+
+export interface IAddStocksForm {
+  id: number;
+  data: IStock;
 }
 
 export interface IExistingRequestForAddStocksForm {
