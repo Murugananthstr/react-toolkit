@@ -14,7 +14,7 @@ export const getAPIDataForAddStockForm = async (searchRequest: ISearchExistingRe
     headers: await getRequestHeaderAync(),
   };
 
-  const url = "http://localhost:1337/api/stocks";
+  const url = "https://stockapi-5bjw.onrender.com/api/stocks";
   const httpResponse = await fetch(url, request);
 
   if (!httpResponse.ok) {
@@ -36,7 +36,7 @@ export const createNewRequestForAddStockForm = async (newRequest: IAddStocksForm
 
   console.log("Reached Create API for Add Stock Form");
 
-  const url = "http://localhost:1337/api/stocks";
+  const url = "https://stockapi-5bjw.onrender.com/api/stocks";
   const httpResponse = await fetch(url, request);
 
   if (!httpResponse.ok) {
