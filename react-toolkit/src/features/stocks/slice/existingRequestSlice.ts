@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ISearchExistingRequest } from "../../types";
 import { IExistingRequestForAddStocksForm } from "../index";
+import { RootState } from "../../../store";
 
 export interface IExistingRequestsForAddStockForm {
   data: IExistingRequestForAddStocksForm[];

@@ -1,11 +1,12 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { call, put } from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 import { ISearchExistingRequest } from "../types";
 import { createNewRequestForAddStockForm, getAPIDataForAddStockForm } from "../../services/api";
 import { LOAD_ADDSTOCKFORM_EXISTING_REQUEST_ASYNC_SUCCESS } from "./slice";
 import { IAddStocksForm, IExistingRequestForAddStocksForm } from "./types";
 import { IAddStockFormApiData } from "../../services/types";
 import { useAppSelector } from "../../hooks";
+import { currentReqFromSelector } from "../../store/selectors";
 
 export function* loadExistingRequestforAddStockForms(action: PayloadAction<ISearchExistingRequest>) {
   const searchRequest = action.payload as ISearchExistingRequest;
@@ -16,6 +17,7 @@ export function* loadExistingRequestforAddStockForms(action: PayloadAction<ISear
       name: item.attributes.name,
       symbol: item.attributes.symbol,
       country: item.attributes.country,
+      description: item.attributes.description,
     }));
     yield put(LOAD_ADDSTOCKFORM_EXISTING_REQUEST_ASYNC_SUCCESS(formatedExistingRequests));
   } catch (error: Error | unknown) {
@@ -24,7 +26,7 @@ export function* loadExistingRequestforAddStockForms(action: PayloadAction<ISear
 }
 
 export function* createRequestforAddStockForms(action: PayloadAction<IAddStocksForm>) {
-  const currentRequest: IAddStocksForm = action.payload;
+  const currentRequest: IAddStocksForm = yield select(currentReqFromSelector);
   try {
     const newRequest: IAddStockFormApiData = yield call(createNewRequestForAddStockForm, currentRequest);
   } catch (error: Error | unknown) {
