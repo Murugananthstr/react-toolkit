@@ -28,10 +28,10 @@ const ListStocks: React.FC = () => {
           <tbody>
             {data.map(x => (
               <tr key={x.id}>
-                <td> {x.id} </td>
                 <td> {x.name} </td>
                 <td> {x.symbol} </td>
                 <td> {x.country} </td>
+                <td> {x.description} </td>
               </tr>
             ))}
           </tbody>

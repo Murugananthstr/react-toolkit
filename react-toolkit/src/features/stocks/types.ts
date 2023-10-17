@@ -15,4 +15,5 @@ export interface IExistingRequestForAddStocksForm {
   name: string;
   symbol: string;
   country: string;
+  description: string;
 }

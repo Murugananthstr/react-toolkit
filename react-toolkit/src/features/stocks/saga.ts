@@ -17,6 +17,7 @@ export function* loadExistingRequestforAddStockForms(action: PayloadAction<ISear
       name: item.attributes.name,
       symbol: item.attributes.symbol,
       country: item.attributes.country,
+      description: item.attributes.description,
     }));
     yield put(LOAD_ADDSTOCKFORM_EXISTING_REQUEST_ASYNC_SUCCESS(formatedExistingRequests));
   } catch (error: Error | unknown) {
