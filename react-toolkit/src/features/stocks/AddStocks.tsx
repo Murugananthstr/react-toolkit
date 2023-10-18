@@ -11,8 +11,8 @@ const schema = z.object({
   symbol: z
     .string()
     .min(3, { message: "Symbol must be atleast 3 characters" })
-    .max(10, { message: "This Symbol cannot exceed more than 10 characters" }),
-  description: z.string().min(3, { message: "Description must be atleast 3 characters" }).max(200, {
+    .max(50, { message: "This Symbol cannot exceed more than 10 characters" }),
+  description: z.string().min(3, { message: "Description must be atleast 3 characters" }).max(500, {
     message: "This Description cannot exceed more than 200 characters",
   }),
   country: z.string().min(3, { message: "Country must be atleast 3 characters" }).max(25, {
